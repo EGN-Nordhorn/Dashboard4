@@ -779,34 +779,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="METALLGEHALT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPl-mS-muo">
-                                <rect key="frame" x="449" y="122" width="126" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-uE-X2d">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-uE-X2d">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Dashboard" id="ueR-ag-9Hi">
-                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="G5h-KF-mkL"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="G5h-KF-mkL">
+                                            <connections>
+                                                <segue destination="MN5-N9-YWj" kind="presentation" id="bSR-d7-icD"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="METALLGEHALT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPl-mS-muo">
+                                <rect key="frame" x="421.5" y="92" width="182.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12560878694057465" green="0.12560884654521942" blue="0.12560857832431793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="gy6-uE-X2d" firstAttribute="top" secondItem="9Vu-wM-y1B" secondAttribute="top" id="20U-wP-40G"/>
+                            <constraint firstItem="fPl-mS-muo" firstAttribute="top" secondItem="gy6-uE-X2d" secondAttribute="bottom" constant="48" id="gSf-f7-b4e"/>
+                            <constraint firstItem="fPl-mS-muo" firstAttribute="centerX" secondItem="9Vu-wM-y1B" secondAttribute="centerX" id="nJ9-U0-VFS"/>
+                            <constraint firstItem="gy6-uE-X2d" firstAttribute="leading" secondItem="9Vu-wM-y1B" secondAttribute="leading" id="reE-UL-WUY"/>
+                            <constraint firstAttribute="trailing" secondItem="gy6-uE-X2d" secondAttribute="trailing" id="rrH-88-Y65"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhg-eK-S8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="1269"/>
+            <point key="canvasLocation" x="916" y="1181"/>
         </scene>
-        <!--View Controller-->
+        <!--Gas View Controller-->
         <scene sceneID="T05-DP-MHL">
             <objects>
-                <viewController id="VLd-1s-yBB" sceneMemberID="viewController">
+                <viewController id="VLd-1s-yBB" customClass="GasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2f-fh-ZPB"/>
                         <viewControllerLayoutGuide type="bottom" id="peP-Jx-5aw"/>
@@ -815,34 +824,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GASAUSTRITT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-yL-Iue">
-                                <rect key="frame" x="491" y="141" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTe-Td-0eL">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTe-Td-0eL">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Dashboard" id="Sd0-k3-bSm">
-                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="rsY-J8-EmN"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="rsY-J8-EmN">
+                                            <connections>
+                                                <segue destination="MN5-N9-YWj" kind="presentation" id="IsK-cU-Jw3"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GASAUSTRITT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-yL-Iue">
+                                <rect key="frame" x="426" y="81" width="172" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VMH-yL-Iue" firstAttribute="centerX" secondItem="UgH-Kr-6MB" secondAttribute="centerX" id="PGN-9H-Pfo"/>
+                            <constraint firstItem="bTe-Td-0eL" firstAttribute="top" secondItem="UgH-Kr-6MB" secondAttribute="top" id="Q3W-TS-pAj"/>
+                            <constraint firstItem="VMH-yL-Iue" firstAttribute="top" secondItem="bTe-Td-0eL" secondAttribute="bottom" constant="37" id="Z9z-cl-LBT"/>
+                            <constraint firstAttribute="trailing" secondItem="bTe-Td-0eL" secondAttribute="trailing" id="b0v-Ek-MDe"/>
+                            <constraint firstItem="bTe-Td-0eL" firstAttribute="leading" secondItem="UgH-Kr-6MB" secondAttribute="leading" id="oD7-lc-0kH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLo-Zi-vmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="1926"/>
+            <point key="canvasLocation" x="916" y="1889"/>
         </scene>
-        <!--View Controller-->
+        <!--Boden Temp View Controller-->
         <scene sceneID="KI0-2q-ZVs">
             <objects>
-                <viewController id="hJ3-Z2-4K5" sceneMemberID="viewController">
+                <viewController id="hJ3-Z2-4K5" customClass="BodenTempViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2zs-L7-yky"/>
                         <viewControllerLayoutGuide type="bottom" id="TRE-Kk-fYy"/>
@@ -851,34 +869,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BODENTEMPERATUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-Ua-DDa">
-                                <rect key="frame" x="429" y="134" width="166" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-JD-zr8">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-JD-zr8">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Dashboard" id="nOX-vy-hiW">
-                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="rBL-gb-1Qp"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="rBL-gb-1Qp">
+                                            <connections>
+                                                <segue destination="MN5-N9-YWj" kind="presentation" id="mNA-PB-fYL"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODENTEMPERATUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-Ua-DDa">
+                                <rect key="frame" x="387" y="74" width="250.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZUk-JD-zr8" firstAttribute="leading" secondItem="xbn-nS-D40" secondAttribute="leading" id="Ean-AN-icp"/>
+                            <constraint firstItem="ZUk-JD-zr8" firstAttribute="top" secondItem="xbn-nS-D40" secondAttribute="top" id="FfQ-70-ndq"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUk-JD-zr8" secondAttribute="trailing" id="Ll6-lW-57r"/>
+                            <constraint firstItem="vbp-Ua-DDa" firstAttribute="top" secondItem="ZUk-JD-zr8" secondAttribute="bottom" constant="30" id="XzL-UK-qW9"/>
+                            <constraint firstItem="vbp-Ua-DDa" firstAttribute="centerX" secondItem="xbn-nS-D40" secondAttribute="centerX" id="e6q-YR-dNs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUo-VC-eMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="2657"/>
+            <point key="canvasLocation" x="814" y="2683"/>
         </scene>
-        <!--View Controller-->
+        <!--Boden Humidity View Controller-->
         <scene sceneID="xYS-CF-43x">
             <objects>
-                <viewController id="rXV-ux-OVP" sceneMemberID="viewController">
+                <viewController id="rXV-ux-OVP" customClass="BodenHumidityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xcN-bf-EPL"/>
                         <viewControllerLayoutGuide type="bottom" id="Nde-GT-vJX"/>
@@ -887,29 +914,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BODENFEUCHTIGKEIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBv-HZ-DsF">
-                                <rect key="frame" x="409" y="199" width="175" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vT-Fb-yxm">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vT-Fb-yxm">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Dashboard" id="epe-Hx-z7b">
-                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="9TP-pP-q9c"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Bluetooth" id="9TP-pP-q9c">
+                                            <connections>
+                                                <segue destination="MN5-N9-YWj" kind="presentation" id="Aaf-YP-YfB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODENFEUCHTIGKEIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBv-HZ-DsF">
+                                <rect key="frame" x="379.5" y="79" width="265" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1vT-Fb-yxm" firstAttribute="top" secondItem="Rsk-Ul-Rtk" secondAttribute="top" id="6Qu-PF-ptz"/>
+                            <constraint firstItem="TBv-HZ-DsF" firstAttribute="centerX" secondItem="Rsk-Ul-Rtk" secondAttribute="centerX" id="76H-vt-93B"/>
+                            <constraint firstItem="TBv-HZ-DsF" firstAttribute="top" secondItem="1vT-Fb-yxm" secondAttribute="bottom" constant="35" id="Duz-rz-yfh"/>
+                            <constraint firstItem="1vT-Fb-yxm" firstAttribute="leading" secondItem="Rsk-Ul-Rtk" secondAttribute="leading" id="WOU-9Y-jRb"/>
+                            <constraint firstAttribute="trailing" secondItem="1vT-Fb-yxm" secondAttribute="trailing" id="cLJ-Fn-5Yl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsn-tK-mm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="3395"/>
+            <point key="canvasLocation" x="846.6796875" y="3394.53125"/>
         </scene>
         <!--Bluetooth Search View Controller-->
         <scene sceneID="2Xc-ap-4de">
@@ -1066,4 +1102,7 @@
     <resources>
         <image name="background" width="545" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bSR-d7-icD"/>
+    </inferredMetricsTieBreakers>
 </document>
