@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8505AD551EE059AD007BE9FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8505AD541EE059AD007BE9FB /* Media.xcassets */; };
+		8505AD661EE06833007BE9FB /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8505AD651EE06833007BE9FB /* MetalViewController.m */; };
 		856E43B41EB616550003F1D6 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856E43B21EB616550003F1D6 /* HockeySDK.framework */; };
 		856E43B51EB616550003F1D6 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 856E43B31EB616550003F1D6 /* HockeySDKResources.bundle */; };
 		856ECCFB1CFF71FF009519D8 /* BluetoothSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856ECCFA1CFF71FF009519D8 /* BluetoothSearchViewController.m */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		8505AD541EE059AD007BE9FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		8505AD641EE06833007BE9FB /* MetalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalViewController.h; sourceTree = "<group>"; };
+		8505AD651EE06833007BE9FB /* MetalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalViewController.m; sourceTree = "<group>"; };
 		856E43B21EB616550003F1D6 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		856E43B31EB616550003F1D6 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		856ECCF91CFF71FF009519D8 /* BluetoothSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSearchViewController.h; sourceTree = "<group>"; };
@@ -67,6 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8505AD601EE063B2007BE9FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				858FA0781CFBA43000757EDC /* ViewController.h */,
+				858FA0791CFBA43000757EDC /* ViewController.m */,
+				856ECCF91CFF71FF009519D8 /* BluetoothSearchViewController.h */,
+				856ECCFA1CFF71FF009519D8 /* BluetoothSearchViewController.m */,
+				8505AD641EE06833007BE9FB /* MetalViewController.h */,
+				8505AD651EE06833007BE9FB /* MetalViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		856E43B11EB616550003F1D6 /* HockeySDK.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +114,10 @@
 		858FA0711CFBA43000757EDC /* DashboardNordhorn */ = {
 			isa = PBXGroup;
 			children = (
+				8505AD601EE063B2007BE9FB /* ViewControllers */,
 				858FA08E1CFBB19C00757EDC /* KNCirclePercentView */,
 				858FA0751CFBA43000757EDC /* AppDelegate.h */,
 				858FA0761CFBA43000757EDC /* AppDelegate.m */,
-				858FA0781CFBA43000757EDC /* ViewController.h */,
-				858FA0791CFBA43000757EDC /* ViewController.m */,
 				858FA0981CFBB21700757EDC /* SerialGATT.h */,
 				858FA0991CFBB21700757EDC /* SerialGATT.m */,
 				858FA07B1CFBA43000757EDC /* Main.storyboard */,
@@ -113,8 +128,6 @@
 				858FA0721CFBA43000757EDC /* Supporting Files */,
 				858FA0A41CFCED9000757EDC /* CircleView.h */,
 				858FA0A51CFCED9000757EDC /* CircleView.m */,
-				856ECCF91CFF71FF009519D8 /* BluetoothSearchViewController.h */,
-				856ECCFA1CFF71FF009519D8 /* BluetoothSearchViewController.m */,
 				856ECCFC1CFF73CA009519D8 /* BluetoothCell.h */,
 				856ECCFD1CFF73CA009519D8 /* BluetoothCell.m */,
 			);
@@ -240,6 +253,7 @@
 				858FA0771CFBA43000757EDC /* AppDelegate.m in Sources */,
 				856ECCFB1CFF71FF009519D8 /* BluetoothSearchViewController.m in Sources */,
 				858FA0741CFBA43000757EDC /* main.m in Sources */,
+				8505AD661EE06833007BE9FB /* MetalViewController.m in Sources */,
 				858FA0941CFBB19C00757EDC /* KNPercentLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

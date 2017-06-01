@@ -32,6 +32,8 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<false/>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UIStatusBarHidden~ipad</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
@@ -39,5 +41,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
