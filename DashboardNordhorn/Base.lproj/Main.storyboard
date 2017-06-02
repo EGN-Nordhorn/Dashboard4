@@ -797,7 +797,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIB-Rn-hwf" customClass="CircleView">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIB-Rn-hwf" customClass="CircleView">
                                 <rect key="frame" x="185" y="386" width="250" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S7-oY-m27">
@@ -815,7 +815,7 @@
                                     <constraint firstItem="4S7-oY-m27" firstAttribute="centerX" secondItem="fIB-Rn-hwf" secondAttribute="centerX" id="s7j-NW-fhd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7y-l5-N97" customClass="CircleView">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7y-l5-N97" customClass="CircleView">
                                 <rect key="frame" x="621" y="386" width="250" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtr-dT-xN7">
@@ -847,6 +847,10 @@
                             <constraint firstAttribute="trailing" secondItem="gy6-uE-X2d" secondAttribute="trailing" id="rrH-88-Y65"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="jaView" destination="fIB-Rn-hwf" id="e46-79-sLK"/>
+                        <outlet property="neinView" destination="Xtr-dT-xN7" id="CgW-Hm-0OL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhg-eK-S8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1228,6 +1232,6 @@
         <image name="background" width="545" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mNA-PB-fYL"/>
+        <segue reference="bSR-d7-icD"/>
     </inferredMetricsTieBreakers>
 </document>
