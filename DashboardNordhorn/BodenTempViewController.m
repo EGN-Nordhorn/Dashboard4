@@ -7,8 +7,10 @@
 //
 
 #import "BodenTempViewController.h"
+#import "KNCirclePercentView.h"
 
 @interface BodenTempViewController ()
+@property (weak, nonatomic) IBOutlet KNCirclePercentView *percentView;
 
 @end
 
@@ -17,6 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+     self.percentView.backgroundColor = [UIColor clearColor];
+    
+    [self.percentView drawCircleWithPercent:67
+                                   duration:2
+                                  lineWidth:40
+                                  clockwise:YES
+                                    lineCap:kCALineCapRound
+                                  fillColor:[UIColor clearColor]
+                                strokeColor:[UIColor colorWithRed:0.13f green:0.6f blue:0.83f alpha:1]
+                             animatedColors:nil];
+    
+    self.percentView.percentLabel.font = [UIFont systemFontOfSize:50];
+    self.percentView.percentLabel.textColor = [UIColor whiteColor];
+    self.percentView.percentLabel.text = @"23 °C";
+    
 }
 
 - (void)didReceiveMemoryWarning {

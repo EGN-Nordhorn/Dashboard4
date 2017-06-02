@@ -969,6 +969,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODENTEMPERATUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-Ua-DDa">
+                                <rect key="frame" x="387" y="74" width="250.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-JD-zr8">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <items>
@@ -981,22 +987,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODENTEMPERATUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-Ua-DDa">
-                                <rect key="frame" x="387" y="74" width="250.5" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Hi-mAy" customClass="KNCirclePercentView">
+                                <rect key="frame" x="337" y="209" width="350" height="350"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="AKL-CZ-f6d"/>
+                                    <constraint firstAttribute="width" constant="350" id="OP2-Mw-gaJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12560878694057465" green="0.12560884654521942" blue="0.12560857832431793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ZUk-JD-zr8" firstAttribute="leading" secondItem="xbn-nS-D40" secondAttribute="leading" id="Ean-AN-icp"/>
                             <constraint firstItem="ZUk-JD-zr8" firstAttribute="top" secondItem="xbn-nS-D40" secondAttribute="top" id="FfQ-70-ndq"/>
                             <constraint firstAttribute="trailing" secondItem="ZUk-JD-zr8" secondAttribute="trailing" id="Ll6-lW-57r"/>
+                            <constraint firstItem="O9l-Hi-mAy" firstAttribute="centerY" secondItem="xbn-nS-D40" secondAttribute="centerY" id="OBH-pi-37c"/>
                             <constraint firstItem="vbp-Ua-DDa" firstAttribute="top" secondItem="ZUk-JD-zr8" secondAttribute="bottom" constant="30" id="XzL-UK-qW9"/>
+                            <constraint firstItem="O9l-Hi-mAy" firstAttribute="centerX" secondItem="xbn-nS-D40" secondAttribute="centerX" id="YUE-Qg-UqD"/>
                             <constraint firstItem="vbp-Ua-DDa" firstAttribute="centerX" secondItem="xbn-nS-D40" secondAttribute="centerX" id="e6q-YR-dNs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="percentView" destination="O9l-Hi-mAy" id="Xm1-va-XNA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUo-VC-eMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1215,6 +1228,6 @@
         <image name="background" width="545" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aaf-YP-YfB"/>
+        <segue reference="mNA-PB-fYL"/>
     </inferredMetricsTieBreakers>
 </document>
