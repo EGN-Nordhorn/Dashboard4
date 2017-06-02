@@ -59,9 +59,12 @@
         //Ja View should be alert.
         _jaView.alpha = 1.0;
         _neinView.alpha = 0.2;
-    } else {
+    } else if (value == 0) {
         //Nein View should be alert.
         _neinView.alpha = 1.0;
+        _jaView.alpha = 0.2;
+    } else {
+        _neinView.alpha = 0.2;
         _jaView.alpha = 0.2;
     }
 }
@@ -100,6 +103,7 @@
 }
 - (void) setDisconnect{
     NSLog(@"Bluetooth disconnected!");
+    [self setStatusView:-1];
     
 }
 

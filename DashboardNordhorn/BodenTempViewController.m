@@ -9,12 +9,18 @@
 #import "BodenTempViewController.h"
 #import "KNCirclePercentView.h"
 
+#import "BluetoothSearchViewController.h"
+
 #define GREEN_COLOR [UIColor colorWithRed:0.14 green:0.73 blue:0.41 alpha:1]
 #define RED_COLOR   [UIColor colorWithRed:0.87 green:0.18 blue:0.28 alpha:1]
 #define YELLOW_COLOR [UIColor colorWithRed:0.87 green:0.82 blue:0.16 alpha:1]
 
-@interface BodenTempViewController ()
+@interface BodenTempViewController ()<BTSmartSensorDelegate>
 @property (weak, nonatomic) IBOutlet KNCirclePercentView *percentView;
+
+
+@property (strong, nonatomic) SerialGATT* serialGatt;
+@property(strong, nonatomic) CBPeripheral* remoteSender;
 
 @end
 
@@ -23,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupBluetooth];
     [self setViewStatus:20];
 }
 
@@ -58,6 +65,20 @@
 }
 
 
+-(void) setupBluetooth {
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"UserDidSelectDevice"
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification * note) {
+                                                      
+                                                      _serialGatt.delegate = self;
+                                                      self.remoteSender = _serialGatt.activePeripheral;
+                                                      [_serialGatt connect:self.remoteSender];
+                                                      
+                                                  }];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -65,14 +86,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    BluetoothSearchViewController* btVc = (BluetoothSearchViewController*)  segue.destinationViewController;
+    self.serialGatt = [[SerialGATT alloc] init];
+    [self.serialGatt setup];
+    btVc.serialGatt = self.serialGatt;
 }
-*/
+
+
+#pragma - Bluetooth
+
+- (void) serialGATTCharValueUpdated: (NSString *)UUID value: (NSData *)data{
+    
+    
+    NSString* receivedString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"receivedString is %@", receivedString);
+    
+    
+    NSRange range = [receivedString rangeOfString:@"/"];
+    if (range.location == NSNotFound) {
+        NSLog(@"Invalid format.");
+    } else {
+        NSString* str = [receivedString substringToIndex:(receivedString.length -1)];
+        [self setViewStatus:str.floatValue];
+        
+    }
+    
+}
+- (void) setConnect{
+    NSLog(@"Bluetooth connected");
+}
+- (void) setDisconnect{
+    NSLog(@"Bluetooth disconnected!");
+    
+    
+}
+
+
 
 @end

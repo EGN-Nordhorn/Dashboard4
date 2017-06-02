@@ -18,7 +18,6 @@
 
 
 @property (strong, nonatomic) SerialGATT* serialGatt;
-@property(strong, nonatomic) NSMutableData* receivedData;
 @property(strong, nonatomic) CBPeripheral* remoteSender;
 
 @end
@@ -111,6 +110,7 @@
 }
 - (void) setDisconnect{
     NSLog(@"Bluetooth disconnected!");
+    [self setViewStatusWithValue:-1];
     
 }
 
