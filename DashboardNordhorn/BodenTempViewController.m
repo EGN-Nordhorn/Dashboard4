@@ -101,11 +101,8 @@
 
 - (void) serialGATTCharValueUpdated: (NSString *)UUID value: (NSData *)data{
     
-    
     NSString* receivedString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
     NSLog(@"receivedString is %@", receivedString);
-    
     
     NSRange range = [receivedString rangeOfString:@"/"];
     if (range.location == NSNotFound) {
