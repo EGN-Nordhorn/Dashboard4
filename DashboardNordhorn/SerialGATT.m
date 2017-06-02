@@ -212,7 +212,6 @@
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    printf("in updateValueForCharacteristic function\n");
     
     if (error) {
         printf("updateValueForCharacteristic failed\n");

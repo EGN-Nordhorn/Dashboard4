@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupBluetooth];
-    _receivedData =  [[NSMutableData alloc] init];
     
     // Do any additional setup after loading the view.
 }
@@ -57,17 +56,23 @@
 
 -(void) setViewStatusWithValue:(int) value {
     if (value >= 0 && value <= 40) {
+        
         _weakView.alpha = 1.0;
         _midView.alpha = 0.2;
         _strongView.alpha = 0.2;
+        
     } else if (value > 40 && value <= 85) {
+        
         _weakView.alpha = 0.2;
-        _midView.alpha = 0.1;
+        _midView.alpha = 1.0;
         _strongView.alpha = 0.2;
+        
     } else if (value > 85) {
+        
         _weakView.alpha = 0.2;
         _midView.alpha = 0.2;
-        _strongView.alpha = 0.1;
+        _strongView.alpha = 1.0;
+        
     } else {
         NSLog(@"value is out of range. Wrong %d", value);
         _weakView.alpha = 0.2;
@@ -91,19 +96,13 @@
 
 - (void) serialGATTCharValueUpdated: (NSString *)UUID value: (NSData *)data{
     
-    [self.receivedData appendData:data];
-    
-    UInt8 bytes_to_find[] = { 0x0D, 0x0A };
-    NSData *dataToFind = [NSData dataWithBytes:bytes_to_find
-                                        length:sizeof(bytes_to_find)];
-    
-    NSRange rangeOfData = [data rangeOfData:dataToFind options:0 range:NSMakeRange(0, data.length)];
-    
-    if (rangeOfData.location != NSNotFound) {
-        NSLog(@"Find the end");
-        NSString* stringData = [[NSString alloc] initWithData:[self.receivedData copy] encoding:NSUTF8StringEncoding];
-        [self.receivedData setLength:0];
-        NSLog(@" I got the string data is %@", stringData);
+    NSString* receivedString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSRange range = [receivedString rangeOfString:@"/"];
+    if (range.location == NSNotFound) {
+        NSLog(@"Invalid format.");
+    } else {
+        NSString* str = [receivedString substringToIndex:(receivedString.length -1)];
+        [self setViewStatusWithValue:str.intValue];
     }
     
 }
