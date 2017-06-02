@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupBluetooth];
-    [self setViewStatus:20];
+    [self setViewStatus:14];
 }
 
 
@@ -38,12 +38,12 @@
     
     UIColor* color = GREEN_COLOR;
     
-    float percentage = temperatur / 45.0;
-    if (temperatur >= 0 && temperatur <= 15) {
+    float percentage = temperatur / 40.0;
+    if (temperatur >= 0 && temperatur < 15) {
         color = GREEN_COLOR;
-    } else if (temperatur > 15 && temperatur < 30 ) {
+    } else if (temperatur >= 15 && temperatur <= 25 ) {
         color = YELLOW_COLOR;
-    } else if (temperatur >= 30) {
+    } else if (temperatur > 25) {
         color = RED_COLOR;
         
     }

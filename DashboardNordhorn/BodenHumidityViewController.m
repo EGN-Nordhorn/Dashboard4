@@ -27,13 +27,14 @@
     
      [self setupBluetooth];
     
-    [self setViewStatus:20];
+    [self setViewStatus:66];
     
 }
 
 
 -(void) setViewStatus:(int) value{
     
+    self.percentView.backgroundColor = [UIColor clearColor];
     [self.percentView drawCircleWithPercent:value
                                    duration:2
                                   lineWidth:40
