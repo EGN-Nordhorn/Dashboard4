@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8505AD551EE059AD007BE9FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8505AD541EE059AD007BE9FB /* Media.xcassets */; };
 		8505AD661EE06833007BE9FB /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8505AD651EE06833007BE9FB /* MetalViewController.m */; };
 		8505AD691EE08F59007BE9FB /* BodenTempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8505AD681EE08F59007BE9FB /* BodenTempViewController.m */; };
 		8505AD6C1EE08FBF007BE9FB /* BodenHumidityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8505AD6B1EE08FBF007BE9FB /* BodenHumidityViewController.m */; };
 		8505AD6F1EE08FD9007BE9FB /* GasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8505AD6E1EE08FD9007BE9FB /* GasViewController.m */; };
+		8505AD711EE1A820007BE9FB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8505AD701EE1A820007BE9FB /* Media.xcassets */; };
 		856E43B41EB616550003F1D6 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856E43B21EB616550003F1D6 /* HockeySDK.framework */; };
 		856E43B51EB616550003F1D6 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 856E43B31EB616550003F1D6 /* HockeySDKResources.bundle */; };
 		856ECCFB1CFF71FF009519D8 /* BluetoothSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856ECCFA1CFF71FF009519D8 /* BluetoothSearchViewController.m */; };
@@ -30,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8505AD541EE059AD007BE9FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8505AD641EE06833007BE9FB /* MetalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalViewController.h; sourceTree = "<group>"; };
 		8505AD651EE06833007BE9FB /* MetalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalViewController.m; sourceTree = "<group>"; };
 		8505AD671EE08F59007BE9FB /* BodenTempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodenTempViewController.h; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		8505AD6B1EE08FBF007BE9FB /* BodenHumidityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodenHumidityViewController.m; sourceTree = "<group>"; };
 		8505AD6D1EE08FD9007BE9FB /* GasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasViewController.h; sourceTree = "<group>"; };
 		8505AD6E1EE08FD9007BE9FB /* GasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasViewController.m; sourceTree = "<group>"; };
+		8505AD701EE1A820007BE9FB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		856E43B21EB616550003F1D6 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		856E43B31EB616550003F1D6 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		856ECCF91CFF71FF009519D8 /* BluetoothSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSearchViewController.h; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				858FA0981CFBB21700757EDC /* SerialGATT.h */,
 				858FA0991CFBB21700757EDC /* SerialGATT.m */,
 				858FA07B1CFBA43000757EDC /* Main.storyboard */,
-				8505AD541EE059AD007BE9FB /* Media.xcassets */,
+				8505AD701EE1A820007BE9FB /* Media.xcassets */,
 				858FA07E1CFBA43000757EDC /* Assets.xcassets */,
 				858FA0801CFBA43000757EDC /* LaunchScreen.storyboard */,
 				858FA0831CFBA43000757EDC /* Info.plist */,
@@ -228,7 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8505AD551EE059AD007BE9FB /* Media.xcassets in Resources */,
+				8505AD711EE1A820007BE9FB /* Media.xcassets in Resources */,
 				858FA0821CFBA43000757EDC /* LaunchScreen.storyboard in Resources */,
 				858FA07F1CFBA43000757EDC /* Assets.xcassets in Resources */,
 				856E43B51EB616550003F1D6 /* HockeySDKResources.bundle in Resources */,
