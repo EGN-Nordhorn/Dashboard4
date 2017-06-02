@@ -19,7 +19,6 @@
 
 
 @property (strong, nonatomic) SerialGATT* serialGatt;
-@property(strong, nonatomic) NSMutableData* receivedData;
 @property(strong, nonatomic) CBPeripheral* remoteSender;
 
 @end
@@ -29,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupBluetooth];
-    _receivedData =  [[NSMutableData alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -56,14 +54,15 @@
 
 - (void) setStatusView: (int) value {
     
+    NSLog(@"Value to set is %d", value);
     if (value == 1) {
         //Ja View should be alert.
         _jaView.alpha = 1.0;
         _neinView.alpha = 0.2;
     } else {
         //Nein View should be alert.
-        _neinView.alpha = 0.2;
-        _jaView.alpha = 1.0;
+        _neinView.alpha = 1.0;
+        _jaView.alpha = 0.2;
     }
 }
 
@@ -81,21 +80,20 @@
 
 - (void) serialGATTCharValueUpdated: (NSString *)UUID value: (NSData *)data{
     
-    [self.receivedData appendData:data];
     
-    UInt8 bytes_to_find[] = { 0x0D, 0x0A };
-    NSData *dataToFind = [NSData dataWithBytes:bytes_to_find
-                                        length:sizeof(bytes_to_find)];
+    NSString* receivedString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSRange rangeOfData = [data rangeOfData:dataToFind options:0 range:NSMakeRange(0, data.length)];
+    NSLog(@"receivedString is %@", receivedString);
     
-    if (rangeOfData.location != NSNotFound) {
-        NSLog(@"Find the end");
-        NSString* stringData = [[NSString alloc] initWithData:[self.receivedData copy] encoding:NSUTF8StringEncoding];
-        [self.receivedData setLength:0];
-        NSLog(@" I got the string data is %@", stringData);
+    
+    NSRange range = [receivedString rangeOfString:@"/"];
+    if (range.location == NSNotFound) {
+        NSLog(@"Invalid format.");
+    } else {
+        NSString* str = [receivedString substringToIndex:(receivedString.length -1)];
+        [self setStatusView:str.intValue];
     }
-    
+
 }
 - (void) setConnect{
     NSLog(@"Bluetooth connected");
