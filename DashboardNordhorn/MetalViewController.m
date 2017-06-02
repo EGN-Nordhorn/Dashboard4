@@ -14,9 +14,13 @@
 
 @interface MetalViewController ()<BTSmartSensorDelegate>
 @property (weak, nonatomic) IBOutlet CircleView *jaView;
-@property (weak, nonatomic) IBOutlet UILabel *neinView;
+@property (weak, nonatomic) IBOutlet CircleView *neinView;
+
+
+
 @property (strong, nonatomic) SerialGATT* serialGatt;
 @property(strong, nonatomic) NSMutableData* receivedData;
+@property(strong, nonatomic) CBPeripheral* remoteSender;
 
 @end
 
@@ -24,8 +28,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupBluetooth];
     _receivedData =  [[NSMutableData alloc] init];
     // Do any additional setup after loading the view.
+}
+
+-(void) setupBluetooth {
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"UserDidSelectDevice"
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification * note) {
+                                                      
+                                                      _serialGatt.delegate = self;
+                                                      self.remoteSender = _serialGatt.activePeripheral;
+                                                      [_serialGatt connect:self.remoteSender];
+                                                      
+                                                  }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,9 +54,9 @@
 }
 
 
-- (void) setStatusView: (BOOL) flag {
+- (void) setStatusView: (int) value {
     
-    if (flag) {
+    if (value == 1) {
         //Ja View should be alert.
         _jaView.alpha = 1.0;
         _neinView.alpha = 0.2;

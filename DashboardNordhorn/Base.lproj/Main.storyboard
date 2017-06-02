@@ -849,7 +849,7 @@
                     </view>
                     <connections>
                         <outlet property="jaView" destination="fIB-Rn-hwf" id="e46-79-sLK"/>
-                        <outlet property="neinView" destination="Xtr-dT-xN7" id="CgW-Hm-0OL"/>
+                        <outlet property="neinView" destination="o7y-l5-N97" id="T5q-Y2-oGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhg-eK-S8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -886,7 +886,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCa-5I-Az4" customClass="CircleView">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCa-5I-Az4" customClass="CircleView">
                                 <rect key="frame" x="103" y="324" width="220" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqr-ev-gaZ">
@@ -904,7 +904,7 @@
                                     <constraint firstItem="Qqr-ev-gaZ" firstAttribute="centerY" secondItem="FCa-5I-Az4" secondAttribute="centerY" id="QUY-Fz-YN1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-1j-oCD" customClass="CircleView">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-1j-oCD" customClass="CircleView">
                                 <rect key="frame" x="736" y="324" width="220" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e72-x1-CwG">
@@ -922,7 +922,7 @@
                                     <constraint firstItem="e72-x1-CwG" firstAttribute="centerX" secondItem="YPr-1j-oCD" secondAttribute="centerX" id="vK7-ey-YYI"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52I-cC-mad" customClass="CircleView">
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52I-cC-mad" customClass="CircleView">
                                 <rect key="frame" x="426" y="324" width="220" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mittel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-Tq-xZc">
@@ -956,6 +956,11 @@
                             <constraint firstItem="YPr-1j-oCD" firstAttribute="top" secondItem="FCa-5I-Az4" secondAttribute="top" id="sem-Fh-tF1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="midView" destination="52I-cC-mad" id="I7B-Rd-hqG"/>
+                        <outlet property="strongView" destination="YPr-1j-oCD" id="k0h-n2-Hwa"/>
+                        <outlet property="weakView" destination="FCa-5I-Az4" id="YcW-en-5v6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLo-Zi-vmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
